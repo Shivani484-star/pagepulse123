@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PagePulse</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to PagePulse 🚀</h1>
+        <p>My first Flask website is working!</p>
+        
+        <form method="POST">
+            <textarea name="user_text" placeholder="Enter your text here..." rows="4" required></textarea>
+            <br><br>
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if text %}
+            <div class="result">
+                <h3>Result:</h3>
+                <p><b>You entered:</b> {{ text }}</p>
+                <p><b>Words:</b> {{ w }} | <b>Characters:</b> {{ c }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
